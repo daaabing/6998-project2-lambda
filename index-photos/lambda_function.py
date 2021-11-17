@@ -25,6 +25,7 @@ def detect_labels(photo, bucket):
 
 def lambda_handler(event, context):
     # Get the object from the event and show its content type
+    print('abc')
     bucket = event['Records'][0]['s3']['bucket']['name']
     photo = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'], encoding='utf-8')
     print(bucket, photo)
